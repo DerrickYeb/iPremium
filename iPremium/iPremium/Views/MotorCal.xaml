@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control:GradientContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:control="clr-namespace:iPremium.Controls" NavigationPage.HasNavigationBar="false" NavigationPage.BackButtonTitle=""
+            xmlns:derry="clr-namespace:iPremium.Controls"
+                             Visual="Material"
+                             BackgroundColor="#cb2724"
+             x:Class="iPremium.Views.MotorCal">
+    <Grid x:Name="MainGrid">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="24" Spacing="0">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label x:Name="WelcomeLabel" Text="WELCOME TO" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />
+                    <Label x:Name="PosyLabel" Text="iPremium" FontSize="48" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
+                    <!-- Place new controls here -->
+                    <Label x:Name="IntroLabel" Margin="0,24,0,16" FontSize="15" FontFamily="{StaticResource font_book}" TextColor="#ffffff" Text="This tool lets you quickly calculate motor insurance premium." />
+                    <StackLayout x:Name="FormLayout" Spacing="16" VerticalOptions="CenterAndExpand">
+                        <Grid ColumnSpacing="16">
+                           
+                            <StackLayout Spacing="5">
+                                <Label Text="Cover" FontFamily="{StaticResource font_medium}"  />
+                                <derry:BorderlessPicker x:Name="xCovertype" SelectedItem="{Binding CoverType}" Visual="Material" Title="Choose type of cover" TitleColor="#005b82" BackgroundColor="White" TextColor="#005B82">
+                                    <derry:BorderlessPicker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Private Individual</x:String>
+                                            <x:String>Corporate</x:String>
+                                            <x:String>Motor Cycle</x:String>
+                                            <x:String>Taxi</x:String>
+                                            <x:String>Ambulance</x:String>
+                                            <x:String>Hiring</x:String>
+                                            <x:String>Mini Bus</x:String>
+                                            <x:String>Maxi Bus</x:String>
+                                            <x:String>Own Goods</x:String>
+                                            <x:String>Articulator/Tanker</x:String>
+                                            <x:String>General Cartage</x:String>
+                                            <x:String>Special on Road</x:String>
+                                            <x:String>Special on Site</x:String>
+                                            <x:String>GW1 Class1</x:String>
+                                            <x:String>GW1 Class2</x:String>
+                                        </x:Array>
+                                    </derry:BorderlessPicker.ItemsSource>
+                                </derry:BorderlessPicker>
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout Spacing="8">
+                            <Label Text="REGISTRATION NUMBER" FontFamily="{StaticResource font_medium}"  Visual="Material" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Registration Number"/>
+                                        <Span Text=" (e.g BA 1420 20)"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Entry x:Name="xRegistrationNumber" Text="{Binding RegistrationNumber}" Keyboard="Default" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Vehicle Make" FontFamily="{StaticResource font_medium}" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Vehicle Make" />
+                                        <Span Text=" e.g Toyota Camry" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Entry x:Name="xVehicleMake" Text="{Binding VehicleMake}" Keyboard="Text" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Seat Capacity e.g Number of Car seats" FontFamily="{StaticResource font_medium}"  />
+                            <Entry Text="{Binding SeatCapacity}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Cubic Capacity" FontFamily="{StaticResource font_medium}"  />
+                            <Entry x:Name="CubicCapacity" Text="{Binding CubicCapacity}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Year of Make e.g 2020" FontFamily="{StaticResource font_medium}" />
+                                <Entry x:Name="xYearOfMake" Text="{Binding YOM}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Value" FontFamily="{StaticResource font_medium}"/>
+                            <Entry x:Name="xValue" Text="{Binding Value}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Third Party Property Damaged" FontFamily="{StaticResource font_medium}" />
+                            <Entry x:Name="x3PropertyDamaged" Text="{Binding ThirdPartyDamaged}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="No Claim Discount Rate (NCD%)" FontFamily="{StaticResource font_medium}"/>
+                            <Entry x:Name="xNCD" Text="{Binding NCD}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Fleet Discount Rate" FontFamily="{StaticResource font_medium}"/>
+                            <Entry x:Name="xFCD" Text="{Binding FCD}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                        <StackLayout Spacing="8">
+                            <Label Text="Excess Bought" FontFamily="{StaticResource font_medium}"/>
+                            <Entry x:Name="xExcessLoad" Text="{Binding ExcessBought}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button x:Name="CalculateButton" Command="{Binding ResultCommand}" Clicked="CalculateButton_Clicked" Visual="Material" VerticalOptions="EndAndExpand" Text="CALCULATE" Margin="16" />
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</control:GradientContentPage>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control:GradientContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:iPremium.Controls"
+             xmlns:control="clr-namespace:iPremium.Controls"
+             
+             NavigationPage.BackButtonTitle="" StartColor="{StaticResource dark_purple}" EndColor="{StaticResource dark_blue}"
+             x:Class="iPremium.Views.ResultPage">
+    <Grid x:Name="MainGrid">
+        <StackLayout Margin="24" Spacing="0">
+            <Label x:Name="SubTitleLabel" Text="Motor Insurance" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />
+            <Label x:Name="TitleLabel" Text="iPremium Calculator" FontSize="48" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
+            <controls:RoundedContentView x:Name="Card" Margin="0,24,0,0" BackgroundColor="{StaticResource white}" CornerRadius="8">
+                <StackLayout Padding="24" Spacing="8">
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Cover Type" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label x:Name="xCovertype" VerticalOptions="Center" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Registration Number" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label x:Name="xRegistrationNumber" VerticalOptions="Center" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Vehicle Make" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label x:Name="xVehicleMake" VerticalOptions="Center" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Basic Premium" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label x:Name="xBasicPremium" VerticalOptions="Center" LineBreakMode="TailTruncation" Text="{Binding BasicPremium, StringFormat='{0:0.00} units'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Cubic Loading" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding CubicCapacity, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Age Loading" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding AgeLoading, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Third Party Basic Premium" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                            <Label VerticalOptions="Center" Text="{Binding ThirdPartyDamage, StringFormat='{0:0.00000000}'}" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                            <Label VerticalOptions="Center" Margin="8,0,0,0" Text="{Binding TargetGainPercentage, StringFormat='({0:0.00}%)'}" FontSize="14" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Comprehensive Basic" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding ComprehensiveBasic, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="No Claim Discount rate" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding NCD, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Fleet Claim Discount" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding FCD, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Gross Premium" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding GrossPremium, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Excess Bought" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding ExcessBought, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Extra Third Part Property Damage" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding ExtraTPPD, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Office Charge" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding OfficeCharge, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="Extra Seat" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding ExtraSeat, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <BoxView Margin="0,16" HeightRequest="1" BackgroundColor="#DDDDDD" />
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding PremiumPackage, StringFormat='Premium: {0:0.00}   '}" FontSize="16" FontFamily="{StaticResource font_heavy}" TextColor="{StaticResource dark_blue}" />
+                </StackLayout>
+            </controls:RoundedContentView>
+            <Button x:Name="CalculateButton" Command="{Binding ResultCommand}"  Visual="Material" VerticalOptions="EndAndExpand" Text="Share" Margin="16" />
+        </StackLayout>
+        <ff:CachedImage x:Name="MoonBoy" Source="moon.png" VerticalOptions="EndAndExpand" />
+    </Grid>
+</control:GradientContentPage>
