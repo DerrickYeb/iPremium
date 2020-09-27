@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MagicGradients" Version="1.1.1" />
     <PackageReference Include="Plugin.MaterialDesignControls" Version="1.7.0" />
     <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="18.2.0.58" />
     <PackageReference Include="Xam.Plugin.WebView" Version="2.1.3" />

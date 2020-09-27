@@ -4,6 +4,7 @@
           xmlns:control="clr-namespace:iPremium.Controls" NavigationPage.HasNavigationBar="false" NavigationPage.BackButtonTitle=""
             xmlns:derry="clr-namespace:iPremium.Controls"
                              Visual="Material"
+                             ControlTemplate="{StaticResource PageWithGradient}"
                              BackgroundColor="#cb2724"
              x:Class="iPremium.Views.MotorCal">
     <Grid x:Name="MainGrid">
@@ -11,15 +12,15 @@
             <StackLayout VerticalOptions="FillAndExpand" Padding="24" Spacing="0">
                 <StackLayout VerticalOptions="CenterAndExpand">
                     <Label x:Name="WelcomeLabel" Text="WELCOME TO" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />
-                    <Label x:Name="PosyLabel" Text="iPremium" FontSize="48" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
+                    <Label x:Name="PosyLabel" Text="iPremium" FontSize="28" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
                     <!-- Place new controls here -->
                     <Label x:Name="IntroLabel" Margin="0,24,0,16" FontSize="15" FontFamily="{StaticResource font_book}" TextColor="#ffffff" Text="This tool lets you quickly calculate motor insurance premium." />
                     <StackLayout x:Name="FormLayout" Spacing="16" VerticalOptions="CenterAndExpand">
                         <Grid ColumnSpacing="16">
                            
                             <StackLayout Spacing="5">
-                                <Label Text="Cover" FontFamily="{StaticResource font_medium}"  />
-                                <derry:BorderlessPicker x:Name="xCovertype" SelectedItem="{Binding CoverType}" Visual="Material" Title="Choose type of cover" TitleColor="#005b82" BackgroundColor="White" TextColor="#005B82">
+                                <Label Text="Cover" FontFamily="{StaticResource font_medium}" />
+                                <derry:BorderlessPicker x:Name="xCovertype" SelectedItem="{Binding CoverType}" FontSize="12" Visual="Material" Title="Choose type of cover" TitleColor="#005b82" BackgroundColor="White" TextColor="#005B82">
                                     <derry:BorderlessPicker.ItemsSource>
                                         <x:Array Type="{x:Type x:String}">
                                             <x:String>Private Individual</x:String>

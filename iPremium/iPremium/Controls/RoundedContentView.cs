@@ -14,7 +14,7 @@ namespace iPremium.Controls
         public static readonly BindableProperty HasBackgroundGradientProperty = BindableProperty.Create(nameof(HasBackgroundGradient), typeof(bool), typeof(RoundedContentView), defaultValue: default(bool));
         public static readonly BindableProperty GradientStartColorProperty = BindableProperty.Create(nameof(GradientStartColor), typeof(Color), typeof(RoundedContentView), defaultValue: default(Color));
         public static readonly BindableProperty GradientEndColorProperty = BindableProperty.Create(nameof(GradientEndColor), typeof(Color), typeof(RoundedContentView), defaultValue: default(Color));
-
+        
         public bool HasBackgroundGradient
         {
             get { return (bool)GetValue(HasBackgroundGradientProperty); }

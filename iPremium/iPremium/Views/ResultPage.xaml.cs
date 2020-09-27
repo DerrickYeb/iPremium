@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FFImageLoading.Forms;
 using iPremium.Controls;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -22,12 +23,14 @@ namespace iPremium.Views
             InitializeComponent();
             SubTitleLabel.TranslateTo(1000, 0, 0, null);
             TitleLabel.TranslateTo(1000, 0, 0, null);
-            //MoonBoy.TranslateTo(0, 1000, 0, null);
+            MoonBoy.TranslateTo(0, 1000, 0, null);
             Card.TranslateTo(1000, 0, 0, null);
-            Xamarin.Essentials.Preferences.Get("BasicPremium", xBasicPremium.Text);
-            Xamarin.Essentials.Preferences.Get("CoverType", xCovertype.Text);
-            Xamarin.Essentials.Preferences.Get("RegistrationNumber",xRegistrationNumber.Text);
-            Xamarin.Essentials.Preferences.Get("VehicleMake",xVehicleMake.Text);
+           xBasicPremium.Text = Preferences.Get("BasicPremium", string.Empty);
+            xCubicLoading.Text = Preferences.Get("CubicLoading", string.Empty);
+            xAgeLaoding.Text = Preferences.Get("AgeLoading", string.Empty);
+            xCovertype.Text = Preferences.Get("CoverType", string.Empty);
+            xRegistrationNumber.Text = Preferences.Get("RegistrationNumber",string.Empty);
+            xVehicleMake.Text = Preferences.Get("VehicleMake",string.Empty);
         }
         protected override async void OnAppearing()
         {
@@ -41,11 +44,11 @@ namespace iPremium.Views
                 await Task.WhenAll(
                     SubTitleLabel.TranslateTo(0, 0, 400, Easing.CubicInOut),
                     TitleLabel.TranslateTo(0, 0, 450, Easing.CubicInOut),
-                    Card.TranslateTo(0, 0, 500, Easing.CubicInOut)
-                   // MoonBoy.TranslateTo(0, 0, 550, Easing.CubicInOut)
+                    Card.TranslateTo(0, 0, 500, Easing.CubicInOut),
+                    MoonBoy.TranslateTo(0, 0, 550, Easing.CubicInOut)
                 );
 
-                //RotateElement(MoonBoy, 600000, new CancellationToken());
+                 RotateElement(MoonBoy, 600000, new CancellationToken());
 
                 _initialized = true;
             }
@@ -68,8 +71,8 @@ namespace iPremium.Views
                     for (int i = 0; i < 20; i++)
                     {
                         var size = random.Next(3, 7);
-                        //var star = new CachedImage() { Source = "star.png", Opacity = 0.3, HeightRequest = size, WidthRequest = size, HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.Start, TranslationX = random.Next(0, formsWidth), TranslationY = random.Next(0, formsHeight) };
-                        //starField.Children.Add(star);
+                        var star = new CachedImage() { Source = "star.png", Opacity = 0.3, HeightRequest = size, WidthRequest = size, HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.Start, TranslationX = random.Next(0, formsWidth), TranslationY = random.Next(0, formsHeight) };
+                        starField.Children.Add(star);
                     }
 
                     _stars.Add(starField);

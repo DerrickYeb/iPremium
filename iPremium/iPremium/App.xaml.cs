@@ -11,7 +11,7 @@ namespace iPremium
         {
             InitializeComponent();
 
-            MainPage = new MotorCal();
+            MainPage = new NavigationPage(new MotorCal());
         }
 
         protected override void OnStart()
