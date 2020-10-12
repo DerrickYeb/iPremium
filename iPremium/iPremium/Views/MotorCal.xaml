@@ -67,7 +67,7 @@
                         </StackLayout>
                         <StackLayout Spacing="8">
                             <Label Text="Seat Capacity e.g Number of Car seats" FontFamily="{StaticResource font_medium}"  />
-                            <Entry Text="{Binding SeatCapacity}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
+                            <Entry x:Name="xSeatCapacity" Text="{Binding SeatCapacity}" Keyboard="Numeric" BackgroundColor="White" TextColor="#005B82"/>
                         </StackLayout>
                         <StackLayout Spacing="8">
                             <Label Text="Cubic Capacity" FontFamily="{StaticResource font_medium}"  />

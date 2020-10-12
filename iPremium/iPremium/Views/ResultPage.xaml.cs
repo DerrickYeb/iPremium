@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FFImageLoading.Forms;
 using iPremium.Controls;
+using Newtonsoft.Json.Converters;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,12 +26,30 @@ namespace iPremium.Views
             TitleLabel.TranslateTo(1000, 0, 0, null);
             MoonBoy.TranslateTo(0, 1000, 0, null);
             Card.TranslateTo(1000, 0, 0, null);
+          
            xBasicPremium.Text = Preferences.Get("BasicPremium", string.Empty);
+            xThirdPart.Text = Preferences.Get("ThirdParty", string.Empty);
             xCubicLoading.Text = Preferences.Get("CubicLoading", string.Empty);
             xAgeLaoding.Text = Preferences.Get("AgeLoading", string.Empty);
             xCovertype.Text = Preferences.Get("CoverType", string.Empty);
             xRegistrationNumber.Text = Preferences.Get("RegistrationNumber",string.Empty);
             xVehicleMake.Text = Preferences.Get("VehicleMake",string.Empty);
+            xExcessBought.Text = Preferences.Get("ExcessLoad", string.Empty);
+            xTPPD.Text = Preferences.Get("ExtraThirdParty", string.Empty);
+            xoffice.Text = Preferences.Get("OfficeCharge", string.Empty);
+            xSeat.Text = Preferences.Get("ExtraSeat", string.Empty);
+            double ncd = Convert.ToDouble(Preferences.Get("NCD", string.Empty));
+            double comprehensive = Convert.ToDouble(xBasicPremium.Text) + Convert.ToDouble(xAgeLaoding.Text) + Convert.ToDouble(xCubicLoading.Text) + Convert.ToDouble(xThirdPart.Text);
+            xComprehensive.Text = comprehensive.ToString();
+            var ncdrate = ncd * comprehensive;
+            xNCD.Text = ncdrate.ToString();
+            double fcd = Convert.ToDouble(Preferences.Get("FCD", string.Empty));
+            var fcdrate = fcd * Convert.ToDouble(xComprehensive.Text) - ncdrate * fcd;
+            xFCD.Text = fcdrate.ToString();
+            var gross = comprehensive - ncdrate - fcdrate;
+            xGrossP.Text = gross.ToString();
+            var premium = gross + Convert.ToDouble(xExcessBought.Text) + Convert.ToDouble(xTPPD.Text) + Convert.ToDouble(xoffice.Text) + Convert.ToDouble(xSeat.Text);
+            xPremium.Text = "GHS " + premium.ToString();
         }
         protected override async void OnAppearing()
         {
