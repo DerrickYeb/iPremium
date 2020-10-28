@@ -27,6 +27,7 @@ namespace iPremium.Views
             MoonBoy.TranslateTo(0, 1000, 0, null);
             Card.TranslateTo(1000, 0, 0, null);
           
+            //Testing Codes using dictionary
            xBasicPremium.Text = Preferences.Get("BasicPremium", string.Empty);
             xThirdPart.Text = Preferences.Get("ThirdParty", string.Empty);
             xCubicLoading.Text = Preferences.Get("CubicLoading", string.Empty);
@@ -48,8 +49,14 @@ namespace iPremium.Views
             xFCD.Text = fcdrate.ToString();
             var gross = comprehensive - ncdrate - fcdrate;
             xGrossP.Text = gross.ToString();
-            var premium = gross + Convert.ToDouble(xExcessBought.Text) + Convert.ToDouble(xTPPD.Text) + Convert.ToDouble(xoffice.Text) + Convert.ToDouble(xSeat.Text);
-            xPremium.Text = "GHS " + premium.ToString();
+            //var premium = gross + Convert.ToDouble(xExcessBought.Text) + Convert.ToDouble(xTPPD.Text) + Convert.ToDouble(xoffice.Text) + Convert.ToDouble(xSeat.Text);
+            //xPremium.Text = "GHS " + premium.ToString();
+            xPremium.Text = Premium(gross,Convert.ToDouble(xExcessBought.Text),Convert.ToDouble(xTPPD.Text),Convert.ToDouble(xoffice.Text),Convert.ToDouble(xSeat.Text));
+        }
+        private string Premium(double gross, double excessload,double tddd, double office, double seatSize)
+        {
+            string premium = (string)(gross + excessload + tddd + office + seatSize).ToString();
+            return $"GHS {premium}";
         }
         protected override async void OnAppearing()
         {
