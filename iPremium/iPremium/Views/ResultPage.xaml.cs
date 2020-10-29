@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using FFImageLoading.Forms;
 using iPremium.Controls;
+using iPremium.Interfaces;
 using Newtonsoft.Json.Converters;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -43,10 +47,10 @@ namespace iPremium.Views
             double comprehensive = Convert.ToDouble(xBasicPremium.Text) + Convert.ToDouble(xAgeLaoding.Text) + Convert.ToDouble(xCubicLoading.Text) + Convert.ToDouble(xThirdPart.Text);
             xComprehensive.Text = comprehensive.ToString();
             var ncdrate = ncd * comprehensive;
-            xNCD.Text = ncdrate.ToString();
+            xNCD.Text = $"{ncdrate.ToString()}%";
             double fcd = Convert.ToDouble(Preferences.Get("FCD", string.Empty));
             var fcdrate = fcd * Convert.ToDouble(xComprehensive.Text) - ncdrate * fcd;
-            xFCD.Text = fcdrate.ToString();
+            xFCD.Text = $"{fcdrate.ToString()}%";
             var gross = comprehensive - ncdrate - fcdrate;
             xGrossP.Text = gross.ToString();
             //var premium = gross + Convert.ToDouble(xExcessBought.Text) + Convert.ToDouble(xTPPD.Text) + Convert.ToDouble(xoffice.Text) + Convert.ToDouble(xSeat.Text);
@@ -118,6 +122,22 @@ namespace iPremium.Views
             }
 
             await Task.WhenAll(rotateTasks);
+        }
+
+        public async void ShareInfo()
+        {
+             await Share.RequestAsync(new ShareTextRequest
+             {
+                 Subject = "Comprehensive Motor Insurance",
+                 Text = $"Comprehensive Motor Insurance:\n\nCover Type - {xCovertype.Text}\nRegistration Number - {xRegistrationNumber.Text}\nVehicle Make - {xVehicleMake.Text}\n" +
+                 $"Basic Premium - {xBasicPremium.Text}\nCubic Loading - {xCubicLoading.Text}\nAge Loading - {xAgeLaoding.Text}\nThird Party Basic Premium - {xThirdPart.Text}\nComprehensive Basic - {xComprehensive.Text}\nNCD% - {xNCD.Text}\nFCD% - {xFCD.Text}\nGross Premium - {xGrossP.Text}\nExcess Bought - {xExcessBought.Text}\nExtra Third Party Property Damage - {xTPPD.Text}\nOffice Charge - {xoffice.Text}\nExtra Seat - {xSeat.Text}\nPremium - {xPremium.Text}",
+                 Title = "Comprehensive Motor Insurance"
+             });
+        }
+
+        private void CalculateButton_Clicked(object sender, EventArgs e)
+        {
+            ShareInfo();
         }
     }
 }

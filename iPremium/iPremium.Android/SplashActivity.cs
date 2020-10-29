@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace iPremium.Droid
 {
-    [Activity(Label = "iPremium", Icon = "@mipmap/icon", Theme = "@style/SplashTheme", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "iPremium", Icon = "@mipmap/ic_launcher", Theme = "@style/SplashTheme", MainLauncher = true, NoHistory = true)]
     public class SplashActivity:global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
 

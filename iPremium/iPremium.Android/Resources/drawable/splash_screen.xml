@@ -4,6 +4,6 @@
     <color android:color="@color/launcher_background"/>
   </item>
 <item>
-  <bitmap android:src="@drawable/splash" android:gravity="center"></bitmap>
+  <bitmap android:src="@drawable/Splashscreen" android:gravity="center"></bitmap>
 </item>
 </layer-list>
