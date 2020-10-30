@@ -55,12 +55,38 @@ namespace iPremium.Views
             xGrossP.Text = gross.ToString();
             //var premium = gross + Convert.ToDouble(xExcessBought.Text) + Convert.ToDouble(xTPPD.Text) + Convert.ToDouble(xoffice.Text) + Convert.ToDouble(xSeat.Text);
             //xPremium.Text = "GHS " + premium.ToString();
-            xPremium.Text = Premium(gross,Convert.ToDouble(xExcessBought.Text),Convert.ToDouble(xTPPD.Text),Convert.ToDouble(xoffice.Text),Convert.ToDouble(xSeat.Text));
+            xPremium.Text = PremiumCedis(gross,Convert.ToDouble(xExcessBought.Text),Convert.ToDouble(xTPPD.Text),Convert.ToDouble(xoffice.Text),Convert.ToDouble(xSeat.Text));
+            xPremiumDollar.Text = PremiumDollar(gross,Convert.ToDouble(xExcessBought.Text),Convert.ToDouble(xTPPD.Text),Convert.ToDouble(xoffice.Text),Convert.ToDouble(xSeat.Text));
+            xPremiumPounds.Text = PremiumPounds(gross,Convert.ToDouble(xExcessBought.Text),Convert.ToDouble(xTPPD.Text),Convert.ToDouble(xoffice.Text),Convert.ToDouble(xSeat.Text));
+            xPremiumEuros.Text = PremiumEuros(gross,Convert.ToDouble(xExcessBought.Text),Convert.ToDouble(xTPPD.Text),Convert.ToDouble(xoffice.Text),Convert.ToDouble(xSeat.Text));
         }
-        private string Premium(double gross, double excessload,double tddd, double office, double seatSize)
+        private string PremiumCedis(double gross, double excessload,double tddd, double office, double seatSize)
         {
+            
             string premium = (string)(gross + excessload + tddd + office + seatSize).ToString("N0");
-            return ($"GHS {premium}");
+            
+            return ($"₵ {premium}");
+        }
+        private string PremiumDollar(double gross, double excessload, double tddd, double office, double seatSize)
+        {
+
+            var premium = ((gross + excessload + tddd + office + seatSize ) / 4).ToString("N0");
+
+            return ($"$ {premium}");
+        }
+        private string PremiumPounds(double gross, double excessload, double tddd, double office, double seatSize)
+        {
+
+            string premium = ((gross + excessload + tddd + office + seatSize) / 6.5).ToString("N0");
+
+            return ($"£ {premium}");
+        }
+        private string PremiumEuros(double gross, double excessload, double tddd, double office, double seatSize)
+        {
+
+            var premium = ((gross + excessload + tddd + office + seatSize) / 4.5).ToString("N0");
+
+            return ($"€ {premium}");
         }
         protected override async void OnAppearing()
         {
