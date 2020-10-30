@@ -55,7 +55,7 @@ namespace iPremium.Views
                 
                 basicPremium = 0.05 * Convert.ToDouble(xValue.Text);
                 thirdParty = 272 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 55;
 
                 var charge = officeCharge / 1;

@@ -47,10 +47,10 @@ namespace iPremium.Views
             double comprehensive = Convert.ToDouble(xBasicPremium.Text) + Convert.ToDouble(xAgeLaoding.Text) + Convert.ToDouble(xCubicLoading.Text) + Convert.ToDouble(xThirdPart.Text);
             xComprehensive.Text = comprehensive.ToString();
             var ncdrate = ncd * comprehensive;
-            xNCD.Text = $"{ncdrate.ToString()}%";
+            xNCD.Text = $"{ncdrate.ToString()}";
             double fcd = Convert.ToDouble(Preferences.Get("FCD", string.Empty));
             var fcdrate = fcd * Convert.ToDouble(xComprehensive.Text) - ncdrate * fcd;
-            xFCD.Text = $"{fcdrate.ToString()}%";
+            xFCD.Text = $"{fcdrate.ToString()}";
             var gross = comprehensive - ncdrate - fcdrate;
             xGrossP.Text = gross.ToString();
             //var premium = gross + Convert.ToDouble(xExcessBought.Text) + Convert.ToDouble(xTPPD.Text) + Convert.ToDouble(xoffice.Text) + Convert.ToDouble(xSeat.Text);
@@ -59,8 +59,8 @@ namespace iPremium.Views
         }
         private string Premium(double gross, double excessload,double tddd, double office, double seatSize)
         {
-            string premium = (string)(gross + excessload + tddd + office + seatSize).ToString();
-            return $"GHS {premium}";
+            string premium = (string)(gross + excessload + tddd + office + seatSize).ToString("N0");
+            return ($"GHS {premium}");
         }
         protected override async void OnAppearing()
         {
