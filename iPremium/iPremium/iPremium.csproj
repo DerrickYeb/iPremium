@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="MagicGradients" Version="1.1.1" />
     <PackageReference Include="Plugin.MaterialDesignControls" Version="1.7.0" />
     <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="18.3.0.35" />

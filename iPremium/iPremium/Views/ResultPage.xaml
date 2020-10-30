@@ -2,11 +2,14 @@
 <control:GradientContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:iPremium.Controls"
              xmlns:control="clr-namespace:iPremium.Controls"
-                             Title="Motor Insurance Premium Quote"
+                             Title="iPMC"
              ControlTemplate="{StaticResource PageWithGradient}"
              xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              NavigationPage.BackButtonTitle="Go Back" StartColor="{StaticResource dark_purple}" EndColor="{StaticResource dark_blue}"
              x:Class="iPremium.Views.ResultPage">
+    <control:GradientContentPage.ToolbarItems>
+        <ToolbarItem Text="Share" Clicked="CalculateButton_Clicked"></ToolbarItem>
+    </control:GradientContentPage.ToolbarItems>
     <Grid x:Name="MainGrid">
         <StackLayout Margin="24" Spacing="0">
             <Label x:Name="SubTitleLabel" Text="Motor Insurance" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />

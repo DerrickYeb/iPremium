@@ -19,6 +19,17 @@
                         <Grid ColumnSpacing="16">
                            
                             <StackLayout Spacing="5">
+                                <Label Text="Exchange Rate" FontSize="12" Visual="Material" TextColor="Black" />
+                                <derry:BorderlessPicker Title="Select prefered exhange rate" Visual="Material" FontSize="12">
+                                    <derry:BorderlessPicker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Cedi</x:String>
+                                            <x:String>Dollar</x:String>
+                                            <x:String>Euro</x:String>
+                                            <x:String>Pounds</x:String>
+                                        </x:Array>
+                                    </derry:BorderlessPicker.ItemsSource>
+                                </derry:BorderlessPicker>
                                 <Label Text="Cover" FontFamily="{StaticResource font_medium}" />
                                 <derry:BorderlessPicker x:Name="xCovertype" SelectedItem="{Binding CoverType}" FontSize="12" Visual="Material" Title="Choose type of cover" TitleColor="#005b82" BackgroundColor="White" TextColor="#005B82">
                                     <derry:BorderlessPicker.ItemsSource>

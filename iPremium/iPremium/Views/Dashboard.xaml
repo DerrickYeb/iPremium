@@ -1,10 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CarouselView="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              x:Class="iPremium.Views.Dashboard">
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <Grid>
+            <ScrollView>
+                <CarouselView:CarouselViewControl
+                        x:Name="cvBanners"
+                        AnimateTransition="True"
+                        CurrentPageIndicatorTintColor="Red"
+                        HeightRequest="250"
+                        HorizontalOptions="FillAndExpand"
+                        IndicatorsShape="Circle"
+                        IndicatorsTintColor="LightGray"
+                        InterPageSpacing="0"
+                        ItemsSource="{Binding ListCarousel}"
+                        Orientation="Horizontal"
+                        ShowIndicators="true"
+                        VerticalOptions="StartAndExpand">
+                    <CarouselView:CarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image
+                                        Aspect="Fill"
+                                        HorizontalOptions="FillAndExpand"
+                                        Source="{Binding Image}" />
+                                <Image
+                                        Aspect="Fill"
+                                        HorizontalOptions="FillAndExpand"
+                                        Source="overlay.png" />
+                                <StackLayout
+                                        Margin="30,20,0,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Spacing="15"
+                                        VerticalOptions="Center">
+                                    <Label
+                                            FontFamily="{StaticResource ThinFont}"
+                                            FontSize="12"
+                                            Text="{Binding Text}"
+                                            TextColor="White" />
+                                    <BoxView
+                                            BackgroundColor="White"
+                                            HeightRequest="1"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Start"
+                                            WidthRequest="50" />
+                                    <StackLayout>
+                                        <Label
+                                                FontFamily="{StaticResource PlayfairBold}"
+                                                FontSize="35"
+                                                Text="{Binding Description}"
+                                                TextColor="White" />
+                                        <Label
+                                                FontFamily="{StaticResource LightFont}"
+                                                FontSize="12"
+                                                Text="{Binding Caption}"
+                                                TextColor="White" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CarouselView:CarouselViewControl.ItemTemplate>
+                </CarouselView:CarouselViewControl>
+                
+                
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

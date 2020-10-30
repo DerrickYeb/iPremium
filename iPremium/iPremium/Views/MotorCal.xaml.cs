@@ -130,7 +130,7 @@ namespace iPremium.Views
                 
                 basicPremium = 0.06 * Convert.ToDouble(xValue.Text);
                 thirdParty = 272 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 55;
 
                 var charge = officeCharge / 1;
@@ -206,7 +206,7 @@ namespace iPremium.Views
                 
                 basicPremium = 0.03 * Convert.ToDouble(xValue.Text);
                 thirdParty = 99 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 50;
 
                 var charge = officeCharge / 1;
@@ -276,7 +276,7 @@ namespace iPremium.Views
                 
                 basicPremium = 0.07 * Convert.ToDouble(xValue.Text);
                 thirdParty = 378 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 60;
 
                 var charge = officeCharge / 1;
@@ -353,7 +353,7 @@ namespace iPremium.Views
                
                 basicPremium = 0.07 * Convert.ToDouble(xValue.Text);
                 thirdParty = 297 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 57;
 
                 var charge = officeCharge / 1;
@@ -430,7 +430,7 @@ namespace iPremium.Views
                
                 basicPremium = 0.07 * Convert.ToDouble(xValue.Text);
                 thirdParty = 387 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 60;
 
                 var charge = officeCharge / 1;
@@ -507,7 +507,7 @@ namespace iPremium.Views
                 
                 basicPremium = 0.07 * Convert.ToDouble(xValue.Text);
                 thirdParty = 387 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 60;
 
                 var charge = officeCharge / 1;
@@ -584,7 +584,7 @@ namespace iPremium.Views
               
                 basicPremium = 0.07 * Convert.ToDouble(xValue.Text);
                 thirdParty = 387 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 60;
 
                 var charge = officeCharge / 1;
@@ -660,7 +660,7 @@ namespace iPremium.Views
 
                 basicPremium = 0.04 * Convert.ToDouble(xValue.Text);
                 thirdParty = 387 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 65;
 
                 var charge = officeCharge / 1;
@@ -736,7 +736,7 @@ namespace iPremium.Views
 
                 basicPremium = 0.08 * Convert.ToDouble(xValue.Text);
                 thirdParty = 594 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 65;
 
                 var charge = officeCharge / 1;
@@ -813,7 +813,7 @@ namespace iPremium.Views
                 
                 basicPremium = 0.06 * Convert.ToDouble(xValue.Text);
                 thirdParty = 486 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 65;
 
                 var charge = officeCharge / 1;
@@ -890,7 +890,7 @@ namespace iPremium.Views
             
                 basicPremium = 0.03 * Convert.ToDouble(xValue.Text);
                 thirdParty = 387 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 65;
 
                 var charge = officeCharge / 1;
@@ -967,7 +967,7 @@ namespace iPremium.Views
               
                 basicPremium = 0.015 * Convert.ToDouble(xValue.Text);
                 thirdParty = 198 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 50;
 
                 var charge = officeCharge / 1;
@@ -1043,7 +1043,7 @@ namespace iPremium.Views
 
                 basicPremium = 0.05 * Convert.ToDouble(xValue.Text);
                 thirdParty = 330 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 60;
 
                 var charge = officeCharge / 1;
@@ -1119,7 +1119,7 @@ namespace iPremium.Views
 
                 basicPremium = 0.06 * Convert.ToDouble(xValue.Text);
                 thirdParty = 440 / 1;
-                excessBought = Convert.ToDouble(xExcessLoad.Text) * basicPremium;
+                excessBought = (Convert.ToDouble(xExcessLoad.Text) / 100) * basicPremium;
                 double officeCharge = 60;
 
                 var charge = officeCharge / 1;
